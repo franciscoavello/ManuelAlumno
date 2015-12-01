@@ -12,12 +12,16 @@ alumnos.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "encuestas.html"
     })
     .state('encuestas.pendientes', {
-      url: "/encuestas/pendientes",
+      url: "/pendientes",
       templateUrl: "alumnos-pendientes.html"
     })
     .state('encuestas.completadas', {
-      url: "/encuestas/completadas",
+      url: "/completadas",
       templateUrl: "alumnos-completadas.html"
+    })
+    .state('encuestas.responder', {
+      url: "/responder",
+      templateUrl: "responder-encuestas.html"
     });
 });
 
@@ -32,6 +36,7 @@ alumnos.controller('MenuCtrl', function ($scope, $location) {
 alumnos.controller("VerEncuestas", function($scope,$http){
 			$scope.encuestas = [
 				{
+					id: 1,
 					nombre: "Encuesta PINGESO",
 					tipo: "Encuesta 360",
 					curso: "Proyecto de Ingeniería de Software",
@@ -40,7 +45,8 @@ alumnos.controller("VerEncuestas", function($scope,$http){
 					grupo: "1",
 					jefe: "Juan Peréz"
 				},
-				{
+				{	
+					id: 2,
 					nombre: "Encuesta IHC",
 					tipo: "Encuesta 360",
 					curso: "Interfaz humano-computador",
@@ -50,6 +56,7 @@ alumnos.controller("VerEncuestas", function($scope,$http){
 					jefe: "Francisco Riquelme"
 				},
 				{
+					id: 3,
 					nombre: "Encuesta IHC",
 					tipo: "Encuesta Liderazgo",
 					curso: "Interfaz humano-computador",
@@ -59,6 +66,7 @@ alumnos.controller("VerEncuestas", function($scope,$http){
 					jefe: "Francisco Riquelme"
 				},
 				{
+					id: 4,
 					nombre: "Encuesta PBD",
 					tipo: "Encuesta 360",
 					curso: "Proyecto de Base de Datos",
@@ -81,3 +89,51 @@ alumnos.controller("VerEncuestas", function($scope,$http){
 				});*/
 
 });
+
+alumnos.controller("ResponderEncuesta", function($scope,$http){
+			$scope.preguntas = [
+				{
+					id: 1,
+					pregunta: "Hola",
+					resp1: "sdads",
+					resp2: "fsdfsf",
+					resp3: "sdfqq",
+					resp4: "fsdfgqgq"
+				},
+				{
+					id: 2,
+					pregunta: "Que tal",
+					resp1: "sdads",
+					resp2: "fsdfsf",
+					resp3: "sdfqq",
+					resp4: "fsdfgqgq"
+				},
+				{
+					id: 3,
+					pregunta: "QueOnda",
+					resp1: "sdads",
+					resp2: "fsdfsf",
+					resp3: "sdfqq",
+					resp4: "fsdfgqgq"
+				},
+				{
+					id: 4,
+					pregunta: "Shwnstaiga",
+					resp1: "sdads",
+					resp2: "fsdfsf",
+					resp3: "sdfqq",
+					resp4: "fsdfgqgq"
+				}
+			];
+			/*
+			$http.get("http://jsonplaceholder.typicode.com/photos")
+				.success(function(data){
+					console.log(data);
+					$scope.encuestas = data;
+				})
+				.error(function(err){
+
+				});*/
+
+});
+
