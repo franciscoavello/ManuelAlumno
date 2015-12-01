@@ -1,23 +1,24 @@
-var alumnos = angular.module('VistaAlumnos',['ngRoute']);
+var alumnos = angular.module('VistaAlumnos',['ui.router']);
 
-alumnos.config(function ($routeProvider) {
-  $routeProvider
-  	.when('/', {
-  		controller: 'VerEncuestas',
-  		templateUrl: '/estandarmanueldiseno-master/root.html'
-  	})
-  	.when('/alumnosPendientes', {
-  		controller: 'VerEncuestas',
-  		templateUrl: '/estandarmanueldiseno-master/alumnos-pendientes.html'
-  	})
-  	.when('/alumnosCompletadas', {
-  		controller: 'VerEncuestas',
-  		templateUrl: '/estandarmanueldiseno-master/alumnos-completadas.html'
-  	})
-  	.when('/respEncuesta', {
-  		controller: 'VerEncuestas',
-  		templateUrl: '/estandarmanueldiseno-master/responder-encuestas.html'
-  	}); 
+alumnos.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/");
+  $stateProvider
+	.state('root', {
+		url: "/",
+	    templateUrl: "root.html"
+	})
+	.state('encuestas', {
+      url: "/encuestas",
+      templateUrl: "encuestas.html"
+    })
+    .state('encuestas.pendientes', {
+      url: "/encuestas/pendientes",
+      templateUrl: "alumnos-pendientes.html"
+    })
+    .state('encuestas.completadas', {
+      url: "/encuestas/completadas",
+      templateUrl: "alumnos-completadas.html"
+    });
 });
 
 alumnos.controller('MenuCtrl', function ($scope, $location) {

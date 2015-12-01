@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="VistaAlumnos">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
@@ -12,84 +12,44 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/colores.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/arreglos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!" class="disabled">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul> 
-      <nav class="barraSuperior sinSombra">
+  <script src="js/angular.min.js" type="text/javascript"></script>
+  <script src="js/angular-ui-router.js" type="text/javascript"> </script>
+  <script src="js/controllers/controller.js" type="text/javascript"></script>
+  <nav class="barraSuperior sinSombra" ng-controller="MenuCtrl">
       <div class="nav-wrapper container">
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="azul-oscuro" href="#"><i class="fa fa-user fa-lg fa-pull-left"></i> Usuario</a></li>
-          <li><a class="azul-oscuro" href="#"><i class="fa fa-power-off fa-2x fa-pull-left"></i> Salir</a></li>
+          <li><a class="azul-oscuro"><i class="fa fa-user fa-lg fa-pull-left"></i> Usuario</a></li>
+          <li><a class="azul-oscuro"><i class="fa fa-power-off fa-2x fa-pull-left"></i> Salir</a></li>
         </ul>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars fa-fw azul-oscuro"></i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         </ul>
       <ul class="side-nav" id="mobile-demo">
-          <li><a href="#">Usuario</a></li>
+          <li><a >Usuario</a></li>
           <div class="divider"></div>
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
+          <li><a ui-sref="root">Inicio</a></li>
           <li>
-          <li class="no-padding">
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <a class="collapsible-header">Dropdown</i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="#!">one</a></li>
-                  <li><a href="#!">two</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#!">three</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          </li>
-          <li><a href="#">Salir</a></li>
+          <li><a ui-sref="encuestas">Encuestas</a></li>
+           <li>
+          <li><a >Salir</a></li>
         </ul>
         <ul id="nav-mobile" class="left">
           <li><img src="imagenes/logom.gif"></li>
         </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a class="azul-oscuro" href="#">Link 1</a></li>
-          <li><a class="azul-oscuro" href="#">Link 2</a></li>
-          <li><a class="dropdown-button azul-oscuro" href="#!" data-activates="dropdown1">Dropdown</a></li>
+          <li><a class="azul-oscuro" ui-sref="root">Inicio</a></li>
+          <li><a class="azul-oscuro" ui-sref="encuestas">Encuestas</a></li>
         </ul>
       </div>
     </nav>
 </head>
 <body>
-<!-- Aqui inicia contenido -->
-<div class="container">
-  <h4 class="orange-text">Sección</h4>
-  <div class="contain blanco wrapper z-depth-2">
-    <div class="container">
-        <div class="row">
-        <div class="col s12">
-          <ul class="tabs">
-            <li class="tab col s3"><a href="#test1">Pendientes</a></li>
-            <li class="tab col s3"><a class="active" href="#test2">Completdas</a></li>
-          </ul>
-        </div>
-        <div id="test1" class="col s12">
-          <h5 class="azul-oscuro">Encuestas Pendientes</h5> 
-          <p align="justify" class="azul-oscuro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum euismod placerat. Nunc et mauris sollicitudin risus dapibus accumsan. Proin convallis facilisis imperdiet. Nam sit amet nisi libero. Aliquam placerat vitae felis.</p>
-        </div>
-        <div id="test2" class="col s12">
-          <h5 class="azul-oscuro">Encuestas Completadas</h5> 
-        </div>
-      </div>
-    </div>
-    <br><br>
-    <!-- Aqui termina contenido -->
-  </div>
-</div>
-    <br><br><br><br>
+  <!-- Aqui empieza contenido -->
+<div ui-view></div>
 
+  <!-- Aqui termina contenido -->
     <footer class="page-footer footerColor">
       <div class="container">
         <div class="row">
