@@ -11,9 +11,9 @@ alumnos.config(function($stateProvider, $urlRouterProvider) {
       url: "/encuestas",
       templateUrl: "encuestas.html"
     })
-    .state('encuestas.todas', {
-      url: "/todas",
-      templateUrl: "alumnos-todas.html"
+    .state('encuestas.recordatorios', {
+      url: "/recordatorios",
+      templateUrl: "alumnos-recordatorios.html"
     })
     .state('encuestas.pendientes', {
       url: "/pendientes",
