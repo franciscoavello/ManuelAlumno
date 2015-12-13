@@ -1,10 +1,4 @@
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <div class="row center">
-        <h5 class="header col s12 light azul-oscuro">Cuenta de alumno</h5>
-      </div>
-
-    </div>
   </div>
 
 
@@ -15,7 +9,8 @@
         <div class="row">
         <div class="col s12">
           <ul class="tabs">
-            <li class="tab col s3"><a class="active" ui-sref="encuestas.pendientes">Pendientes</a></li>
+          	<li class="tab col s3"><a class="active" ui-sref="encuestas.todas">Todas</a></li>	
+            <li class="tab col s3"><a ui-sref="encuestas.pendientes">Pendientes</a></li>
         	<li class="tab col s3"><a ui-sref="encuestas.completadas">Completadas</a></li>	
           </ul>
          <div ui-view></div>
@@ -29,34 +24,6 @@
       <div class="section">
 
         <!--   Icon Section   -->
-        <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center"><a ui-sref="encuestas.pendientes" class="turquesa"><i class="fa fa-check-square-o"></i></a></h2>
-            <h5 class="center"><a ui-sref="encuestas.pendientes" class="azul-oscuro">Encuestas pendientes</a></h5>
-
-            <p class="azul-oscuro" align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum euismod placerat. Nunc et mauris sollicitudin risus dapibus accumsan. Proin convallis facilisis imperdiet. Nam sit amet nisi libero. Aliquam placerat vitae felis.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center"><a ui-sref="encuestas.completadas" class="turquesa"><i class="fa fa-bar-chart"></i></a></h2>
-            <h5 class="center"><a ui-sref="encuestas.completadas" class="azul-oscuro">Encuestas Respondidas</a></h5>
-
-            <p class="azul-oscuro" align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum euismod placerat. Nunc et mauris sollicitudin risus dapibus accumsan. Proin convallis facilisis imperdiet. Nam sit amet nisi libero. Aliquam placerat vitae felis..</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center"><a href="" class="turquesa"><i class="fa fa-bell"></i></a></h2>
-            <h5 class="center"><a href="" class="azul-oscuro">Recordatorios</a></h5>
-
-            <p class="azul-oscuro" align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum euismod placerat. Nunc et mauris sollicitudin risus dapibus accumsan. Proin convallis facilisis imperdiet. Nam sit amet nisi libero. Aliquam placerat vitae felis.</p>
-          </div>
-        </div>
-      </div>
 
       </div>
       <br><br>
